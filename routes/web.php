@@ -37,3 +37,5 @@ Route::resource('article', 'ArticleController');
 Route::get('/user', 'UserController@index');
 
 Route::resource('/contact', 'ContactController');
+
+Route::resource('/upload', 'UploadController');

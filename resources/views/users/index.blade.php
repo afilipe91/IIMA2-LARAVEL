@@ -14,8 +14,8 @@
                                 <p>Inscrit depuis le : {{Auth::user()->created_at}}</p>
                                 <strong>Mes articles :</strong>
                                 <ul>
-                                    @foreach(Auth::user()->articles as $article_users)
-                                        <li>{{$article_users->title}}</li>
+                                    @foreach(Auth::user()->articles as $article)
+                                        <li>{{$article->title}}</li>
                                     @endforeach
                                 </ul>
                             @else
