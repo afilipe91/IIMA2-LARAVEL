@@ -23,6 +23,7 @@
                                                                 Pas d'utilisateur
                                                         @endif
                                                 </p>
+                                                    <div class="addthis_inline_share_toolbox"></div>
                                                 <a href="{{route('article.index')}}">Retour</a>
                                         </div>
                                 </div>
