@@ -5,21 +5,26 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+                    <div class="panel-heading">Mon profil</div>
                         <div class="panel-body">
                             <h1><strong>Mes infos</strong></h1>
+                            <hr>
                             @if(Auth::check())
-                                <h2>{{Auth::user()->name}}</h2>
-                                <h3>{{Auth::user()->email}}</h3>
+                                <p>Nom/Prénom : {{Auth::user()->name}}</p>
+                                <p>E-mail : {{Auth::user()->email}}</p>
                                 <p>Inscrit depuis le : {{Auth::user()->created_at}}</p>
-                                <strong>Mes articles :</strong>
-                                <ul>
-                                    @foreach(Auth::user()->articles as $article)
-                                        <li>{{$article->title}}</li>
-                                    @endforeach
-                                </ul>
+                                <h3><strong>Mes articles :</strong></h3>
+                                <div class="list-group">
+
+                                        @foreach(Auth::user()->articles as $article)
+                                        <a href="{{route('article.show', ['id' => $article->id])}}" class="list-group-item">
+                                            <h4 class="list-group-item-heading">{{$article->title}}</h4>
+                                        </a>
+                                        @endforeach
+
+                                </div>
                             @else
-                                <p>Je n'ai pas d'info sur toi</p>
+                                <p>Pas d'info sur vous</p>
                             @endif
                         </div>
                     </div>

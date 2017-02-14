@@ -13,7 +13,8 @@
                         <form method="POST" action="{{route('upload.store')}}" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <input type="file" name="image">
-                            <input type="submit" value="Envoyer">
+                            <hr>
+                            <input class="btn btn-primary" type="submit" value="Envoyer">
                         </form>
                     </div>
                 </div>
