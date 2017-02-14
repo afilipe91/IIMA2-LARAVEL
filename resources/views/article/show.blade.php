@@ -35,5 +35,11 @@
                                 </div>
                         </div>
                 </div>
+        <div>
+            @foreach($article->comments as $comment)
+                {{ $comment->body }}
+            @endforeach
         </div>
+
+
 @endsection
