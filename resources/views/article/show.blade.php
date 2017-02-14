@@ -25,8 +25,11 @@
                                                                     Pas d'utilisateur
                                                             @endif
                                                     </p>
-                                                    <a class="btn btn-default" href="{{ URL::previous() }}">Retour</a>
-                                                        <a class="btn btn-danger"href="{{route('article.edit', ['id' => $article->id])}}">Modifié</a>
+                                                <a class="btn btn-default" href="{{ URL::previous() }}">Retour</a>
+
+                                                @if(Auth::check() && Auth::user()->email == 'admin@admin.fr')
+                                                    <a class="btn btn-danger"href="{{route('article.edit', ['id' => $article->id])}}">Modifié</a>
+                                                @endif
                                             </div>
                                         </div>
                                 </div>

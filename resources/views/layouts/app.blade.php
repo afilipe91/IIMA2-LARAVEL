@@ -39,6 +39,7 @@
                     <ul class="nav navbar-nav">
                         &nbsp;<li><a href="{{ url('/article') }}">Articles</a></li>
                         <li><a href="{{ url('/upload') }}">Upload photo</a></li>
+                        <li><a href="{{ url('/admin') }}">Espace administrateur</a></li>
                         <li><a href="{{ url('/contact') }}">Contact</a></li>
                     </ul>
 

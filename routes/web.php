@@ -32,10 +32,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('article', 'ArticleController');
+Route::resource('/article', 'ArticleController');
 
 Route::get('/user', 'UserController@index');
 
 Route::resource('/contact', 'ContactController');
 
 Route::resource('/upload', 'UploadController');
+
+Route::get('/admin', function () {
+    return view('admin.home');
+})->middleware('isAdmin');
+
+Route::get('/noadmin', function () {
+    return view('admin.acces');
+});
