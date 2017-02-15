@@ -29,6 +29,8 @@
 
                                                 @if(Auth::check() && Auth::user()->email == 'admin@admin.fr')
                                                     <a class="bottom-left btn btn-danger"href="{{route('article.edit', ['id' => $article->id])}}">Modifié</a>
+                                                    <a class="bottom-left btn btn-success"href="{{route('article.create')}}">Créer un article</a>
+
                                                 @endif
 
                                                 @if ($article->isLiked)
