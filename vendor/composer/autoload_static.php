@@ -293,8 +293,8 @@ class ComposerStaticInit6d1329063967b88a613b56c677bc3377
     public static $classMap = array (
         'ArticlesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ArticlesTableSeeder.php',
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_06_175443_create_articles_table.php',
-        'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_145059_create_comments_table.php',
         'CreateContactTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_13_095021_create_contact_table.php',
+        'CreateLikeablesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_100644_create_likeables_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

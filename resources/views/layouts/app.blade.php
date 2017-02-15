@@ -11,8 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css">
+
 
     <!-- Scripts -->
     <script>

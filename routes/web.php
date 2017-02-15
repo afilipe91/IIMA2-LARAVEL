@@ -47,3 +47,5 @@ Route::get('/admin', function () {
 Route::get('/noadmin', function () {
     return view('admin.acces');
 });
+
+Route::get('post/like/{id}', ['as' => 'post.like', 'uses' => 'LikeController@likePost']);
