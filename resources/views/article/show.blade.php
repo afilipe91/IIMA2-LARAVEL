@@ -45,7 +45,19 @@
                                 </div>
                         </div>
                 </div>
+<<<<<<< Updated upstream
             <div>
+=======
+        <div>
+            @if($article->comments)
+                <p>{{$article->comments->body}}</p>
+            @else
+                Pas de commentaire sur cette article.
+            @endif
+            {{--@foreach($article->comments as $comment) --}}
+               {{-- {{ $comment->body }} --}}
+           {{-- @endforeach --}}
+>>>>>>> Stashed changes
         </div>
 
 
