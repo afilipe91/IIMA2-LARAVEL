@@ -32,35 +32,26 @@
                                                     <a class="bottom-left btn btn-success"href="{{route('article.create')}}">Créer un article</a>
 
                                                 @endif
-
-                                                @if ($article->isLiked)
-                                                    <div class="col-sm-8 alert alert-dismissible alert-info">
+                                                @if(!Auth::check())
+                                                    <div class="alert alert-dismissible alert-warning">
                                                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                                        <p>Ton avis a bien été pris en compte</p>
+                                                        <h4>Warning!</h4>
+                                                        <strong>Vous devez être enregistré pour donner votre avis sur cette article !</strong>
                                                     </div>
-                                                @elseif(!$article->isLiked)
-                                                    <a href="{{ route('post.like', $article->id) }}"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i></a>
-                                                    - <a href="{{ route('post.like', $article->id) }}"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></a>
+                                                @else
+                                                    @if ($article->isLiked)
+                                                        <div class="col-sm-8 alert alert-dismissible alert-info">
+                                                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                            <p>Ton avis a bien été pris en compte</p>
+                                                        </div>
+                                                    @elseif(!$article->isLiked)
+                                                        <a href="{{ route('post.like', $article->id) }}"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i></a>
+                                                        - <a href="{{ route('post.like', $article->id) }}"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></a>
+                                                    @endif
                                                 @endif
                                             </div>
                                         </div>
                                 </div>
                         </div>
                 </div>
-<<<<<<< Updated upstream
-            <div>
-=======
-        <div>
-            @if($article->comments)
-                <p>{{$article->comments->body}}</p>
-            @else
-                Pas de commentaire sur cette article.
-            @endif
-            {{--@foreach($article->comments as $comment) --}}
-               {{-- {{ $comment->body }} --}}
-           {{-- @endforeach --}}
->>>>>>> Stashed changes
-        </div>
-
-
 @endsection
