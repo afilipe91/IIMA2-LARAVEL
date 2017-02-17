@@ -10,12 +10,26 @@
                     <div class="panel-body">
                         <form method="POST" action="{{route('article.update', [$article->id])}}">
                             {{csrf_field()}}
-                            <input type="hidden" name="_method" value="PUT">
-                            <input required type="text" value="{{$article->title}}" name="title">
-                            <textarea name="content" id="" cols="30" rows="10">
-                                {{$article->content}}
-                            </textarea>
-                            <input class="btn btn-default" type="submit" value="Modifier">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="inputTitre" class="col-lg-2 control-label">Titre</label>
+                                    <div class="col-lg-10">
+                                        <input type="hidden" name="_method" value="PUT">
+                                        <input type="text" name="title" class="form-control" value="{{$article->title}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputContent" class="col-lg-2 control-label">Article</label>
+                                    <div class="col-lg-10">
+                                        <textarea name="content" class="form-control">{{$article->content}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <button type="submit" class="btn btn-default">Modifié</button>
+                                    </div>
+                                </div>
+                            </fieldset>
                         </form>
                         <hr>
                         <form method="POST" action="{{route('article.destroy', [$article->id])}}">

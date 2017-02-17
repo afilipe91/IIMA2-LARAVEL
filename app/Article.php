@@ -26,5 +26,8 @@ class Article extends Model
 
         return (! is_null($like)) ? true : false;
     }
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
 
 }

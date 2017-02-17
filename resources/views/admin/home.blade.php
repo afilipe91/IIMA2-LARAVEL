@@ -8,7 +8,7 @@
                     <h1>Bienvenue</h1>
                     <p>Vous êtes administrateur !</p>
                     <a class="btn btn-primary" href="{{ url('/article') }}">Administrer les articles</a>
-                    <a class="btn btn-default" href="#">Administrer les commentaires</a>
+                    <a class="btn btn-default" href="{{ route('comment.index') }}">Administrer les commentaires</a>
                 </div>
             </div>
         </div>

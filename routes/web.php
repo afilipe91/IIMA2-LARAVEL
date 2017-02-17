@@ -40,6 +40,8 @@ Route::resource('/contact', 'ContactController');
 
 Route::resource('/upload', 'UploadController');
 
+Route::resource('/comment', 'CommentController');
+
 Route::get('/admin', function () {
     return view('admin.home');
 })->middleware('isAdmin');
@@ -49,3 +51,5 @@ Route::get('/noadmin', function () {
 });
 
 Route::get('post/like/{id}', ['as' => 'post.like', 'uses' => 'LikeController@likePost']);
+
+Route::post('/comment/{article_id}/create', ['uses' => 'CommentController@store', 'as' => 'comment.store']);

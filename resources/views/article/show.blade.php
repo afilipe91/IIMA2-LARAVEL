@@ -6,7 +6,6 @@
                         <div class="col-md-8 col-md-offset-2">
                                 <div class="panel panel-default">
                                         <div class="panel-heading">Article n° {{$article->id}}</div>
-
                                             <div class="panel-body">
                                                 <div class="addthis_inline_share_toolbox"></div>
 
@@ -27,8 +26,8 @@
                                                     </p>
                                                 <a class="btn btn-default" href="{{ route('article.index') }}">Retour</a>
 
-                                                @if(Auth::check() && Auth::user()->email == 'admin@admin.fr')
-                                                    <a class="bottom-left btn btn-danger"href="{{route('article.edit', ['id' => $article->id])}}">Modifié</a>
+                                            @if(Auth::check() && Auth::user()->email == 'admin@admin.fr')
+                                                    <a class="bottom-left btn btn-danger" href="{{route('article.edit', ['id' => $article->id])}}">Modifié</a>
                                                     <a class="bottom-left btn btn-success"href="{{route('article.create')}}">Créer un article</a>
 
                                                 @endif
@@ -54,4 +53,9 @@
                                 </div>
                         </div>
                 </div>
+        @include('comment.show')
+
+        @if(Auth::check())
+            @include('comment.create')
+        @endif
 @endsection
