@@ -16,12 +16,13 @@
                                 <h3><strong>Mes articles :</strong></h3>
                                 <div class="list-group">
 
-                                        @foreach(Auth::user()->articles as $article)
+                                        @forelse(Auth::user()->articles as $article)
                                         <a href="{{route('article.show', ['id' => $article->id])}}" class="list-group-item">
                                             <h4 class="list-group-item-heading">{{$article->title}}</h4>
                                         </a>
-                                        @endforeach
-
+                                        @empty
+                                            <p>Vous n'avez rédiger aucun article.</p>
+                                        @endforelse
                                 </div>
                             @else
                                 <p>Pas d'info sur vous</p>
